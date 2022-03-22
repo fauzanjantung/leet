@@ -4,13 +4,10 @@
  */
 var runningSum = function(nums) {
     let runningSumArray = [];
-    let currentNumber = nums[0];
+    runningSumArray[0] = nums[0];
 
-    for (let i = 0; i < nums.length; i++) {
-      if (i > 0) {
-        currentNumber += nums[i];
-      }
-      runningSumArray.push(currentNumber);
+    for (let i = 1; i < nums.length; i++) {
+      runningSumArray[i] = runningSumArray[i-1] + nums[i]
     }
     
     return runningSumArray
